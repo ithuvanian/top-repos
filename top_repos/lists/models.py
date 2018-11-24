@@ -7,11 +7,11 @@ class Languages(models.Model):
     list = {
         'python': 'python.png',
         'ruby': 'ruby.png',
-        'elixir': 'elixir.png',
         'css': 'css.png',
         'javascript': 'javascript.png',
         'c#': 'csharp.png',
         'java': 'java.png',
+        'elixir': 'elixir.png',
         'rust': 'rust.png'
     }
 
