@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+Top Repos - {{language}}
+{% endblock title %}
+{% block staticfiles %}
+<link rel="stylesheet" href="{% static 'css/list.css' %}" type="text/css" />
+<script type="text/javascript" src="https://code.jquery.com/jquery.min.js"></script>
+<script type="text/javascript" src="{% static 'js/list.js' %}"></script>
+{% endblock staticfiles %}
+
+{% block content %}
+<div class="viewframe">
+    <div class="header">
+        <img src="{% static 'images/'|add:imgpath %}">
+        <div>
+            <h2>Top repos in {{language}}&nbsp;</h2>
+            <h5>as of {{now}} UTC</h5>
+        </div>
+    </div>
+    <a href="{% url 'home' %}" class="btn">
+        << home</a> <ul>
+            {% for summary in summaries %}
+            <li>
+                <a href="{{summary.url}}" target="_blank">
+                    <p class="leadline">
+                        {{forloop.counter}})&nbsp;
+                        <span class="repo-name">{{summary.name}}</span>
+                    </p>
+                    <p class="subline">{{summary.description}}</p>
+                    <p class="subline"> &#x2605; {{summary.stars}}</p>
+                </a>
+            </li>
+            {% endfor %}
+            </ul>
+
+            <a href="{% url 'home' %}" class="btn">
+                << home</a> </div> {% endblock content %}

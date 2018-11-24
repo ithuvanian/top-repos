@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+Current Top Github Repos
+{% endblock title %}
+
+{% block staticfiles %}
+<link rel="stylesheet" href="{% static 'css/homepage.css' %}" type="text/css" />
+<script type="text/javascript" src="https://code.jquery.com/jquery.min.js"></script>
+<script type="text/javascript" src ="{% static 'js/homepage.js' %}"></script>
+{% endblock staticfiles %}
+
+{% block content %}
+    <div class="viewframe">
+        <div class="intro">
+            <img src="{% static 'images/github.png' %}" id="github">
+            <p>Select a language to see the current top repositories on Github:</p>
+        </div>
+        <div class="container">
+            {% for name, imgpath in languages.items %}
+                {% if name == 'css' %}
+                    <p class="langname" id="label{{forloop.counter}}">{{name|upper}}</p>
+                {% else %}
+                    <p class="langname" id="label{{forloop.counter}}">{{name|title}}</p>
+                {% endif %}
+                <div class="homeicon" id="link{{forloop.counter}}">
+                    <a href="{% url 'lists:index' name %}">
+                        <img src="{% static 'images/'|add:imgpath %}">
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock content %}
