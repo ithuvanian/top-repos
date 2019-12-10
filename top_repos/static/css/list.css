@@ -1,0 +1,43 @@
+h2,
+h5 {
+    margin: 0;
+    margin-left: 5px;
+}
+
+li {
+    list-style-type: none;
+    width: 90%;
+    padding-top: .1em;
+    padding-bottom: .9em;
+    padding-left: .5em;
+}
+
+.btn {
+    margin-left: 2.5em;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    padding: 4px;
+    padding-bottom: 2em;
+}
+
+.leadline {
+    margin-bottom: .4em;
+}
+
+.repo-name {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.subline {
+    margin: .1em;
+    margin-left: 1.5em;
+}
+
+.viewframe {
+    background: #555;
+    padding-bottom: 4em;
+}
