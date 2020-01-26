@@ -1,26 +1,29 @@
 {% load static %}
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>
-    {% block title %}
-    {% endblock title %}
+        {% block title %}
+        {% endblock title %}
     </title>
     <link rel="stylesheet" href="{% static 'css/main.css' %}" type="text/css" />
     {% block staticfiles %}
     {% endblock staticfiles %}
 </head>
+
 <body>
     {% block content %}
     {% endblock content %}
     <div class="footer">
         <div class="footer-content">
-            <img src="{% static 'images/python.png' %}" class="inline-img">
+            <span>Created by <a href="https://ithuvanian.github.io/portfolio/">Michael D Weaver</a> with</span>
             <img src="{% static 'images/django.png' %}" class="inline-img">
-            <span>2018 | <a href="https://ithuvanian.github.io/portfolio/">Michael D Weaver</a> | made with 
+            <img src="{% static 'images/python.png' %}" class="inline-img">
         </div>
     </div>
 </body>
+
 </html>
